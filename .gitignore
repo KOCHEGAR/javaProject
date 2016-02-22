@@ -1,0 +1,10 @@
+## my settings for gitignore
+
+/build/
+
+/bin/
+
+.classpath
+.settings/
+build.gradle
+.project
