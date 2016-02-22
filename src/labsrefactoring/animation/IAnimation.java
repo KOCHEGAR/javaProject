@@ -1,11 +1,12 @@
 package labsrefactoring.animation;
 
+import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 
 
 public interface IAnimation {
-
+	public abstract Sprite getFrame();
 	public abstract void setSize(float width, float height);
 	public abstract void flip(boolean flipX, boolean flipY);
 	public abstract void update(float delta);

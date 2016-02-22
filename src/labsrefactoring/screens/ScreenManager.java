@@ -63,8 +63,7 @@ public class ScreenManager {
 		while (iterator.hasNext()) {
 			Map.Entry<String, AbstractScreen> pair = (Map.Entry<String, AbstractScreen>)iterator.next();
 			
-			pair.getValue().dispose();
-			
+			pair.getValue().dispose();	
 		}
 	}
 }

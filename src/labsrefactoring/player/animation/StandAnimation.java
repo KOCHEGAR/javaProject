@@ -1,6 +1,7 @@
 package labsrefactoring.player.animation;
 
 
+import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 
@@ -41,5 +42,11 @@ public class StandAnimation implements IAnimation{
 	public void draw(Vector2 actorPos, SpriteBatch batch) {
 		
 		stand.draw(actorPos, batch);
+	}
+
+	@Override
+	public Sprite getFrame() {
+		// TODO Auto-generated method stub
+		return stand.getFrame();
 	}
 }

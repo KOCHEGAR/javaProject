@@ -2,9 +2,11 @@ package labsrefactoring.player;
 
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 
 import labsrefactoring.animation.IAnimation;
+import labsrefactoring.gravity.Gravitation;
 import labsrefactoring.player.animation.StandAnimation;
 import labsrefactoring.player.animation.WalkAnimation;
 
@@ -13,7 +15,7 @@ public class Player extends Entity{
 	public static final int STAND = 0;
 	public static final int WALK  = 1;
 	
-	private IAnimation currentAnimation;
+	Gravitation gravitation;
 	private IAnimation[] animations = new IAnimation[]{
 		
 			new StandAnimation(),
@@ -27,6 +29,7 @@ public class Player extends Entity{
 		super(x, y);
 		
 		currentAnimation = animations[STAND];
+		gravitation = new Gravitation();
 	} 
 
 	
@@ -40,13 +43,15 @@ public class Player extends Entity{
 	@Override
 	public void update(float delta) {
 	
+		gravitation.gravity(this, delta);
+		
 		currentAnimation.update(delta);
 	}
 
 	@Override
-	public void draw(Vector2 actorPos, SpriteBatch batch) {
+	public void draw(SpriteBatch batch) {
 		
-		currentAnimation.draw(actorPos, batch);
+		currentAnimation.draw(position, batch);
 	}
 
 
@@ -82,9 +87,11 @@ public class Player extends Entity{
 	@Override 
 	public void setSize(float width, float height) {
 		
+		rectangle.setSize(width, height);
 		for (IAnimation iAnimation : animations) {
 			iAnimation.setSize(width, height);
 		}
+		System.out.println(rectangle.getWidth() + " rw - rh " + rectangle.getHeight());
 	}
 
 
