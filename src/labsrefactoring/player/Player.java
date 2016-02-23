@@ -15,7 +15,6 @@ public class Player extends Entity{
 	public static final int STAND = 0;
 	public static final int WALK  = 1;
 	
-	Gravitation gravitation;
 	private IAnimation[] animations = new IAnimation[]{
 		
 			new StandAnimation(),
@@ -29,7 +28,6 @@ public class Player extends Entity{
 		super(x, y);
 		
 		currentAnimation = animations[STAND];
-		gravitation = new Gravitation();
 	} 
 
 	
@@ -42,9 +40,7 @@ public class Player extends Entity{
 
 	@Override
 	public void update(float delta) {
-	
-		gravitation.gravity(this, delta);
-		
+			
 		currentAnimation.update(delta);
 	}
 

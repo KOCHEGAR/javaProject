@@ -5,6 +5,7 @@ import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 
 import labsrefactoring.animation.IAnimation;
+import labsrefactoring.state.IState;
 
 public abstract class Entity {
 
@@ -12,6 +13,7 @@ public abstract class Entity {
 	protected Vector2 velocity;
 	protected Rectangle rectangle;
 	protected IAnimation currentAnimation;
+//	protected IState currentState;
 	
 	public Entity(float x, float y) {
 

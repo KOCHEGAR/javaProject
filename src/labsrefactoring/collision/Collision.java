@@ -15,17 +15,15 @@ public class Collision {
 		for (Rectangle rectangle : map.getGround()) {
 			
 			if (entity.getRect().overlaps(rectangle)) {
-			System.out.println("overlaps");
-			float previousFrameY = entity.getPosition().y + entity.getVelocity().y * Gdx.graphics.getDeltaTime();
-			float previousFrameBottom = previousFrameY - entity.getRect().height;
-			float platformTop = rectangle.y;
+				System.out.println("overlapsed");
+				float previousFrameY = entity.getPosition().y + entity.getVelocity().y * Gdx.graphics.getDeltaTime();
+				float previousFrameBottom = previousFrameY - entity.getRect().height;
+				float platformTop = rectangle.y;
 			
-			if (previousFrameBottom <= platformTop) {
-				System.out.println("here!!!!!!!!");
-				entity.setVelocity(0, 0);
+				if (previousFrameBottom <= platformTop) {
+					
+				}
 			}
-		  }
 		}
-		
 	}
 }

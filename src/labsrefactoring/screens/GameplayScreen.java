@@ -16,7 +16,6 @@ import labsrefactoring.tools.Constants;
 
 public class GameplayScreen extends AbstractScreen{
 
-	//ExplosionAnim explosionAnim;
 	private TestMap map;
 	private Player player;
 	private Sprite bg;
@@ -24,12 +23,10 @@ public class GameplayScreen extends AbstractScreen{
 	public GameplayScreen() {
 		super();
 		
-		player = new Player(10, 150); 
+		player = new Player(10, 100); 
 		player.setSize(50, 105);
 
-		//explosionAnim = new ExplosionAnim();
-		//explosionAnim.setSize(64, 64);
-		
+	
 		///test bg
 		bg = new Sprite(new Texture("bg.jpg"));
 		bg.setSize(400, 240);
@@ -86,12 +83,11 @@ public class GameplayScreen extends AbstractScreen{
 		
 		// фиксация  камеры
 		player.update(dt);
-		Collision.col(player, map);
+		
 		//if (player.getPosition().y <= 0) {player.setPosition(player.getPosition().x, 0);}
 		if (camera.position.x <= 200) camera.position.x = 200;
 		if (camera.position.y <= 120) camera.position.y = 120;
 		
-		//explosionAnim.update(dt);
 //		System.out.println(camera.position.x+" x <-> y "+camera.position.y);
 		camera.update();
 	}
@@ -106,7 +102,6 @@ public class GameplayScreen extends AbstractScreen{
 		bg.draw(batch);
 		map.drawMap(batch);
 		player.draw(batch);
-		//explosionAnim.draw(new Vector2(200, 130), batch);
 		
 		batch.end();
 	}
