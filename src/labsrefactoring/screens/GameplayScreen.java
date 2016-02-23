@@ -17,15 +17,17 @@ import labsrefactoring.tools.Constants;
 public class GameplayScreen extends AbstractScreen{
 
 	private TestMap map;
-	private Player player;
+	private Player player, player2;
+	
 	private Sprite bg;
 	
 	public GameplayScreen() {
 		super();
 		
-		player = new Player(10, 100); 
+		player = new Player(10, 100);
+		player2 = new Player(60, 60);
 		player.setSize(50, 105);
-
+		
 	
 		///test bg
 		bg = new Sprite(new Texture("bg.jpg"));
@@ -83,7 +85,7 @@ public class GameplayScreen extends AbstractScreen{
 		
 		// фиксация  камеры
 		player.update(dt);
-		
+		player2.update(dt);
 		//if (player.getPosition().y <= 0) {player.setPosition(player.getPosition().x, 0);}
 		if (camera.position.x <= 200) camera.position.x = 200;
 		if (camera.position.y <= 120) camera.position.y = 120;
@@ -102,6 +104,7 @@ public class GameplayScreen extends AbstractScreen{
 		bg.draw(batch);
 		map.drawMap(batch);
 		player.draw(batch);
+		player2.draw(batch);
 		
 		batch.end();
 	}

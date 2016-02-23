@@ -70,10 +70,10 @@ public class MyAnimation implements IAnimation{
 		}
 	}
 	
-	public Sprite getFrame(){
+	/*public Sprite getFrame(){
 		
 		return frames.get(frame);
-	}
+	}*/
 	
 	@Override
 	public void draw(Vector2 actorPos, SpriteBatch batch) {

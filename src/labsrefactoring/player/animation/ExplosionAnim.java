@@ -1,6 +1,5 @@
 package labsrefactoring.player.animation;
 
-import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 
@@ -42,9 +41,4 @@ public class ExplosionAnim implements IAnimation{
 		explosion.draw(actorPos, batch);
 	}
 
-	@Override
-	public Sprite getFrame() {
-		// TODO Auto-generated method stub
-		return explosion.getFrame();
-	}
 }

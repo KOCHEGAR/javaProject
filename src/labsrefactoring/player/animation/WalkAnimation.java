@@ -1,6 +1,6 @@
 package labsrefactoring.player.animation;
 
-import com.badlogic.gdx.graphics.g2d.Sprite;
+
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 
@@ -43,9 +43,9 @@ public class WalkAnimation implements IAnimation {
 		walk.draw(actorPos, batch);
 	}
 
-	@Override
+	/*@Override
 	public Sprite getFrame() {
 		// TODO Auto-generated method stub
 		return walk.getFrame();
-	}
+	}*/
 }
