@@ -8,7 +8,7 @@ import labsrefactoring.player.Entity;
 
 public class Collision {
 
-	public static void col(Entity entity, TestMap map) {
+	/*public static void col(Entity entity, TestMap map) {
 	
 		
 		
@@ -25,5 +25,5 @@ public class Collision {
 				}
 			}
 		}
-	}
+	}*/
 }

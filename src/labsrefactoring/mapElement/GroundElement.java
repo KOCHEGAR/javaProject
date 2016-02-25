@@ -13,6 +13,6 @@ public class GroundElement {
 	
 	public Rectangle getGround() {
 		
-		return ground;
+		return ground; 
 	}
 }

@@ -5,19 +5,18 @@ import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.math.Vector2;
+
 import com.badlogic.gdx.utils.viewport.FitViewport;
 
 import labsrefactoring.World.TestMap;
-import labsrefactoring.collision.Collision;
+
 import labsrefactoring.player.Player;
-import labsrefactoring.player.animation.ExplosionAnim;
 import labsrefactoring.tools.Constants;
 
 public class GameplayScreen extends AbstractScreen{
 
 	private TestMap map;
-	private Player player, player2;
+	private Player player;
 	
 	private Sprite bg;
 	
@@ -25,7 +24,6 @@ public class GameplayScreen extends AbstractScreen{
 		super();
 		
 		player = new Player(10, 100);
-		player2 = new Player(60, 60);
 		player.setSize(50, 105);
 		
 	
@@ -47,35 +45,27 @@ public class GameplayScreen extends AbstractScreen{
 		}
 		
 		if (Gdx.input.isKeyPressed(Keys.D)) {
-		
 			//camera.position.x += 150*dt;
-
 			player.setPosition(player.getPosition().x += 1, player.getPosition().y);
-			player.setCurrentAnimation(Player.WALK);
+			player.setCurrentAnimation(Player.ANIM_WALK);
 			player.flip(false, false);
 			
 		}
 		else {
-			player.setCurrentAnimation(Player.STAND);
+			player.setCurrentAnimation(Player.ANIM_STAND);
 		}
 		
 		if (Gdx.input.isKeyPressed(Keys.A)) {
-			
-				//camera.position.x -= 150*dt;
-			
+			//camera.position.x -= 150*dt;
 			player.setPosition(player.getPosition().x -= 1, player.getPosition().y);
-			player.setCurrentAnimation(Player.WALK);
+			player.setCurrentAnimation(Player.ANIM_WALK);
 			player.flip(true, false);
 		}
 		if (Gdx.input.isKeyPressed(Keys.W)) {
-			
 				//camera.position.y += 150*dt;
-		
 		}
 		if (Gdx.input.isKeyPressed(Keys.S)) {
-			
 				//camera.position.y -= 150*dt;
-		
 		}
 	}
 
@@ -85,7 +75,7 @@ public class GameplayScreen extends AbstractScreen{
 		
 		// фиксация  камеры
 		player.update(dt);
-		player2.update(dt);
+		
 		//if (player.getPosition().y <= 0) {player.setPosition(player.getPosition().x, 0);}
 		if (camera.position.x <= 200) camera.position.x = 200;
 		if (camera.position.y <= 120) camera.position.y = 120;
@@ -104,8 +94,7 @@ public class GameplayScreen extends AbstractScreen{
 		bg.draw(batch);
 		map.drawMap(batch);
 		player.draw(batch);
-		player2.draw(batch);
-		
+	
 		batch.end();
 	}
 

@@ -4,5 +4,5 @@ import labsrefactoring.player.Entity;
 
 public interface IState {
 
-	public void update(Entity actor);
+	public void update(Entity actor, float delta);
 }

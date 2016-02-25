@@ -43,6 +43,12 @@ public class StandAnimation implements IAnimation{
 		stand.draw(actorPos, batch);
 	}
 
+	@Override
+	public void setCenter(float centerX, float centerY) {
+		// TODO Auto-generated method stub
+		stand.setCenter(centerX, centerY);
+	}
+
 	/*@Override
 	public Sprite getFrame() {
 		// TODO Auto-generated method stub

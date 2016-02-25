@@ -11,7 +11,6 @@ public abstract class Animations {
 	public Animations() {
 
 		animations = new HashMap<Integer, IAnimation>();
-
 	}
 	
 	protected abstract void init();

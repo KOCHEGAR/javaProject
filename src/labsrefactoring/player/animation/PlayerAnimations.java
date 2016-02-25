@@ -1,6 +1,7 @@
 package labsrefactoring.player.animation;
 
 import labsrefactoring.animation.Animations;
+import labsrefactoring.player.Entity;
 
 public class PlayerAnimations extends Animations{
 
@@ -15,8 +16,7 @@ public class PlayerAnimations extends Animations{
 	protected void init() {
 		// put animations here..
 		
-		animations.put(0, new StandAnimation());
-		animations.put(1, new WalkAnimation());
+		animations.put(Entity.ANIM_STAND, new StandAnimation());
+		animations.put(Entity.ANIM_WALK, new WalkAnimation());
 	}
-
 }

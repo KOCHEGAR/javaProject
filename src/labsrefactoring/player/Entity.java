@@ -5,22 +5,38 @@ import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 
 import labsrefactoring.animation.IAnimation;
+import labsrefactoring.mapElement.GroundElement;
 import labsrefactoring.state.IState;
 
 public abstract class Entity {
 
+	//// STATES
+	public static final int ON_GROUND_STATE = 0;
+	public static final int IN_AIR_STATE    = 1;
+	////
+	
+	/// ANIMATIONS
+	public static final int ANIM_WALK  = 0;
+	public static final int ANIM_JUMP  = 1;
+	public static final int ANIM_FALL  = 2;
+	public static final int ANIM_STAND = 3;
+	///
+	
 	protected Vector2 position;
 	protected Vector2 velocity;
 	protected Rectangle rectangle;
 	protected IAnimation currentAnimation;
-//	protected IState currentState;
+	protected IState currentState;
+	protected GroundElement currentGround;
+	
 	
 	public Entity(float x, float y) {
 
-		velocity = new Vector2();
-		rectangle = new Rectangle();
+		velocity = new Vector2(0, 0);
+		rectangle = new Rectangle(x, y, 0, 0);
 		position = new Vector2(x, y);
 		currentAnimation = null;
+		currentGround = null;
 	}
 	
 	//если понадобится
@@ -32,7 +48,6 @@ public abstract class Entity {
 		position.y = y;
 		rectangle.x = x;
 		rectangle.y = y;
-		/*sprite.setPosition(x, y);*/
 	}
 	public void setPosition(Vector2 pos){
 		position = pos;
@@ -79,12 +94,21 @@ public abstract class Entity {
 		return rectangle;
 	}
 	
+	public void setCurrentGround(GroundElement currentGround) {
+		this.currentGround = currentGround;
+	}
+	public GroundElement getCurrentGround() {
+		return currentGround;
+	}
+	
+	public abstract void setCenter(float centerX, float centerY);
 	public abstract void setSize(float width, float height);
 	public abstract void flip(boolean flipX, boolean flipY);
 	public abstract void setCurrentDirection(Integer Dir);
 	public abstract IAnimation getCurrentAnimation();
 	public abstract void setCurrentState(int state);
 	public abstract void setCurrentAnimation(int anim);
+	
 	
 	public abstract void handleInput(float delta);
 	public abstract void update(float delta);

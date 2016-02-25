@@ -13,7 +13,7 @@ public class Gravitation {
 		this.gravity = gravity;
 	}
 	
-	public void gravity(Entity actor, float dt) {
+	public void applyGravity(Entity actor, float dt) {
 		
 			Vector2 speed = actor.getVelocity();
 			Vector2 position = actor.getPosition();
