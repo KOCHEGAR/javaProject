@@ -46,12 +46,11 @@ public abstract class Entity {
 		
 		position.x = x;
 		position.y = y;
-		rectangle.x = x;
-		rectangle.y = y;
+		rectangle.setCenter(x, y);	
 	}
 	public void setPosition(Vector2 pos){
 		position = pos;
-		rectangle.setPosition(pos);
+		rectangle.setCenter(pos);
 	}
 	
 	public void setVelocity(float x, float y) {
@@ -66,12 +65,12 @@ public abstract class Entity {
 	public void setPosX(float x) {
 		
 		position.x = x;
-		rectangle.x = x;
+	//	rectangle.setCenter(x, rectangle.y-rectangle.height/2);
 	}
 	
 	public void setPosY(float y) {
 		position.y = y;
-		rectangle.y = y;
+		rectangle.setCenter(rectangle.x-rectangle.width/2 , y);
 	}
 	
 	public void setVelX(float x) {
@@ -101,7 +100,6 @@ public abstract class Entity {
 		return currentGround;
 	}
 	
-	public abstract void setCenter(float centerX, float centerY);
 	public abstract void setSize(float width, float height);
 	public abstract void flip(boolean flipX, boolean flipY);
 	public abstract void setCurrentDirection(Integer Dir);

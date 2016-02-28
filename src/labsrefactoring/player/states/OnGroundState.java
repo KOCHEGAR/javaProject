@@ -1,6 +1,5 @@
 package labsrefactoring.player.states;
 
-import labsrefactoring.gravity.Gravitation;
 import labsrefactoring.player.Entity;
 import labsrefactoring.state.IState;
 

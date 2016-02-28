@@ -41,10 +41,4 @@ public class ExplosionAnim implements IAnimation{
 		explosion.draw(actorPos, batch);
 	}
 
-	@Override
-	public void setCenter(float centerX, float centerY) {
-		// TODO Auto-generated method stub
-		
-	}
-
 }

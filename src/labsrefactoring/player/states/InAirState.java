@@ -12,8 +12,8 @@ public class InAirState implements IState{
 	public void update(Entity actor, float delta){
 		grav.applyGravity(actor, delta);
 		System.out.println(actor.getPosition().y);
-		if (actor.getPosition().y - actor.getRect().height/2 <= 0) {
-			//todo setcenter 
+		if (actor.getPosition().y - actor.getRect().height/2 <= 0){// 
+			
 			actor.setCurrentState(Entity.ON_GROUND_STATE);
 		}
 	}

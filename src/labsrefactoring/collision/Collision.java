@@ -1,11 +1,5 @@
 package labsrefactoring.collision;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.math.Rectangle;
-
-import labsrefactoring.World.TestMap;
-import labsrefactoring.player.Entity;
-
 public class Collision {
 
 	/*public static void col(Entity entity, TestMap map) {

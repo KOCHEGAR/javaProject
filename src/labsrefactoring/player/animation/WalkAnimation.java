@@ -42,13 +42,7 @@ public class WalkAnimation implements IAnimation {
 
 		walk.draw(actorPos, batch);
 	}
-
-	@Override
-	public void setCenter(float centerX, float centerY) {
-		// TODO Auto-generated method stub
-		walk.setCenter(centerX, centerY);
-	}
-
+	
 	/*@Override
 	public Sprite getFrame() {
 		// TODO Auto-generated method stub

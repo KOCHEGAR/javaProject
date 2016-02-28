@@ -83,7 +83,7 @@ public class MyAnimation implements IAnimation{
 		
 		float x = actorPos.x;
 		float y = actorPos.y;
-System.out.println(region.getOriginX() + " " + region.getOriginY());
+
 		region.setCenter(x, y);
 		region.draw(batch);
 	}
@@ -103,14 +103,6 @@ System.out.println(region.getOriginX() + " " + region.getOriginY());
 		}
 	}
 
-	@Override
-	public void setCenter(float centerX, float centerY) {
-		// TODO Auto-generated method stub
-		for (Sprite sprite : frames) {
-			sprite.setCenter(centerX, centerY);
-			
-		}
-	}
 	
 	/*public void dispose() {
 		
