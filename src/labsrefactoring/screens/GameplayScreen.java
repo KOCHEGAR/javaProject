@@ -8,6 +8,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 
 import labsrefactoring.World.TestMap;
+import labsrefactoring.component.PlayerInput;
 import labsrefactoring.player.Player;
 import labsrefactoring.tools.Constants;
 
@@ -24,7 +25,7 @@ public class GameplayScreen extends AbstractScreen{
 		player = new Player(10, 100);
 		player.setSize(50, 105);
 		
-	
+		
 		///test bg
 		bg = new Sprite(new Texture("bg.jpg"));
 		bg.setSize(400, 240);
@@ -37,28 +38,31 @@ public class GameplayScreen extends AbstractScreen{
 	@Override
 	protected void handleInput(float dt) {
 // testing  camera
+		player.handleInput(dt);
+		
 		if (Gdx.input.justTouched()) {
 			
 //			ScreenManager.setCurrentScreen("title");
 		}
 		
-		if (Gdx.input.isKeyPressed(Keys.D)) {
+		/*if (Gdx.input.isKeyPressed(Keys.D)) {
 			//camera.position.x += 150*dt;
-			player.setPosition(player.getPosition().x += 1, player.getPosition().y);
-			player.setCurrentAnimation(Player.ANIM_WALK);
-			player.flip(false, false);
+			//player.setVelX(100*dt);
+			//player.setPosition(player.getPosition().x += player.getVelocity().x, player.getPosition().y);
+			//player.setCurrentAnimation(Player.ANIM_WALK);
+			//player.flip(false, false);
 			
 		}
 		else {
 			player.setCurrentAnimation(Player.ANIM_STAND);
-		}
+		}*/
 		
-		if (Gdx.input.isKeyPressed(Keys.A)) {
+		/*if (Gdx.input.isKeyPressed(Keys.A)) {
 			//camera.position.x -= 150*dt;
 			player.setPosition(player.getPosition().x -= 1, player.getPosition().y);
 			player.setCurrentAnimation(Player.ANIM_WALK);
 			player.flip(true, false);
-		}
+		}*/
 		if (Gdx.input.isKeyPressed(Keys.W)) {
 				//camera.position.y += 150*dt;
 		}

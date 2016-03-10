@@ -5,6 +5,7 @@ import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 
 import labsrefactoring.animation.IAnimation;
+import labsrefactoring.component.ActorKeys;
 import labsrefactoring.mapElement.GroundElement;
 import labsrefactoring.state.IState;
 
@@ -28,6 +29,7 @@ public abstract class Entity {
 	protected IAnimation currentAnimation;
 	protected IState currentState;
 	protected GroundElement currentGround;
+	protected ActorKeys keys;
 	
 	
 	public Entity(float x, float y) {
@@ -35,12 +37,18 @@ public abstract class Entity {
 		velocity = new Vector2(0, 0);
 		rectangle = new Rectangle(x, y, 0, 0);
 		position = new Vector2(x, y);
+		keys = new ActorKeys();
 		currentAnimation = null;
 		currentGround = null;
+		
 	}
 	
-	//если понадобится
+	//
 	
+	
+	public ActorKeys getKeys() {
+		return keys;
+	}
 	
 	public void setPosition(float x, float y) { 
 		
@@ -65,7 +73,7 @@ public abstract class Entity {
 	public void setPosX(float x) {
 		
 		position.x = x;
-	//	rectangle.setCenter(x, rectangle.y-rectangle.height/2);
+		rectangle.setCenter(x, rectangle.y-rectangle.height/2);
 	}
 	
 	public void setPosY(float y) {
@@ -76,6 +84,8 @@ public abstract class Entity {
 	public void setVelX(float x) {
 		velocity.x = x;
 	}
+	
+	public void addVelocityX(float dVelX) { velocity.x += dVelX; }
 	
 	public void setVelY(float y) {
 		velocity.y = y;

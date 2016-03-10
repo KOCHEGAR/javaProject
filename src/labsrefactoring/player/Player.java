@@ -1,16 +1,22 @@
 package labsrefactoring.player;
 
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import labsrefactoring.animation.IAnimation;
+import labsrefactoring.component.PlayerInput;
 import labsrefactoring.player.animation.PlayerAnimations;
 import labsrefactoring.player.states.PlayerStates;
 
 
 public class Player extends Entity{
 
-	
+	public static final int LEFT = 0;
+	public static final int RIGHT = 1;
+	public static final int JUMP = 2;
+	//public static final int DOWN = 3;
 
 	PlayerAnimations animations;
 	PlayerStates states;
@@ -26,6 +32,7 @@ public class Player extends Entity{
 		states = new PlayerStates();
 		setCurrentState(IN_AIR_STATE);
 		setCurrentAnimation(ANIM_STAND);
+		PlayerInput.setActorForControl(this);
 	} 
 
 	
@@ -33,14 +40,14 @@ public class Player extends Entity{
 	@Override
 	public void handleInput(float delta) {
 
-	
+		PlayerInput.handleInput(delta);
 	}
 
 	
 	@Override
 	public void update(float delta) {
 		
-		if (currentAnimation != null) { currentAnimation.update(delta); }
+		if (currentAnimation != null) {System.out.println("updated");; currentAnimation.update(delta); }
 		if (currentState != null) { currentState.update(this, delta); }
 	}
 
