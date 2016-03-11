@@ -1,8 +1,7 @@
 package labsrefactoring.player;
 
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input;
+
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import labsrefactoring.animation.IAnimation;
@@ -47,7 +46,7 @@ public class Player extends Entity{
 	@Override
 	public void update(float delta) {
 		
-		if (currentAnimation != null) {System.out.println("updated");; currentAnimation.update(delta); }
+		if (currentAnimation != null) { currentAnimation.update(delta); }
 		if (currentState != null) { currentState.update(this, delta); }
 	}
 
@@ -109,5 +108,13 @@ public class Player extends Entity{
 		for (IAnimation iAnimation : animations.getAll()) {
 			iAnimation.flip(flipX, flipY);
 		}
+	}
+
+
+
+	@Override
+	public int getCurrentState() {
+		
+		return states.getCurrentStateIndex();
 	}
 }

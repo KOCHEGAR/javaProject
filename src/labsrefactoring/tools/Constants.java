@@ -19,9 +19,8 @@ public final class Constants {
 	}
 	
 	
-	///visible game world
-	/*public static final float VIEWPORT_WIDTH = 250.0f;
-	public static final float VIEWPORT_HEIGHT = 100.0f;*/
+	///
+	
 	
 	/// screen size
 	public static final int SCREEN_WIDTH = 800;
@@ -35,6 +34,7 @@ public final class Constants {
 	public static final Sprite testSprite = new Sprite(new TextureRegion(new Texture("ground.jpg"), 1, 67, 32, 32));
 	//public static final Sprite testPlayerSprite = new Sprite(new TextureRegion(new Texture("monsterSpriteSheet.png"), 0, 0, 100, 100));
 	public static final Texture testAnim = new Texture("standandwalk.png");
+	public static final Texture testAnim222 = new Texture("stand_walk_jump_anim.png");
 	public static final Texture explosion = new Texture("Explosion.png");
 	/// static SpriteBatch
 	public static final SpriteBatch BATCH = new SpriteBatch();
