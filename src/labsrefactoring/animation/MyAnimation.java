@@ -47,6 +47,18 @@ public class MyAnimation implements IAnimation{
 		frame = 0;
 	}
 	
+	public MyAnimation(ArrayList<Sprite> frames, float cycleFrame){
+		
+		this.frames = frames;
+		
+		frameCountX = this.frames.size();
+		frameCountY = 1;
+		
+		maxFrameTime = cycleFrame / (frameCountX*frameCountY);
+		currentFrameTime = 0;
+		frame = 0;
+	}
+	
 	@Override
 	public void update(float dt) {
 		

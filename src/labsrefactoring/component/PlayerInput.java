@@ -3,7 +3,6 @@ package labsrefactoring.component;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.math.Vector2;
-import com.sun.org.apache.xpath.internal.axes.AxesWalker;
 
 import labsrefactoring.player.Entity;
 import labsrefactoring.player.Player;
@@ -59,19 +58,29 @@ public class PlayerInput {
 		return true;
 	}
 	
+	public static boolean checkJump() {
+		
+		return space;
+	}
+
+	private static boolean inAir() {
+		
+		return actor.getCurrentState() == Player.IN_AIR_STATE;
+	}
+
 	public static void moveLeft(float velocityX){
 		
 		if (a) {
 			
 			float velX = velocityX * dt;
-			//actor.setVelX(velX);
-			actor.addVelocityX(velX);
+			actor.setVelX(velX);
+			//actor.addVelocityX(velX);
 			
-			Vector2 pos = actor.getPosition();
-			Vector2 velocity = actor.getVelocity();
-			actor.setPosX(pos.x + velocity.x);
+			float posX = actor.getPosition().x;
+			 velX = actor.getVelocity().x;
+			actor.setPosX(posX + velX);
 			
-			actor.setCurrentAnimation(Player.ANIM_WALK);
+			if (!inAir()) { actor.setCurrentAnimation(Player.ANIM_WALK); }
 			actor.flip(true, false);
 		}
 	}
@@ -83,12 +92,22 @@ public class PlayerInput {
 			float velX = velocityX * dt;
 			actor.setVelX(velX);
 			
-			Vector2 pos = actor.getPosition();
-			Vector2 velocity = actor.getVelocity();
-			actor.setPosX(pos.x + velocity.x);
+			float posX = actor.getPosition().x;
+			// пока так
+			velX = actor.getVelocity().x;
 			
-			actor.setCurrentAnimation(Player.ANIM_WALK);
+			actor.setPosX(posX + velX);
+			
+			if (!inAir()) {	actor.setCurrentAnimation(Player.ANIM_WALK); }
 			actor.flip(false, false);
 		}
 	}
+	
+	public static void jump(float velocityY){
+			
+		actor.setVelY(velocityY);
+		actor.setCurrentState(Player.IN_AIR_STATE);
+		actor.setCurrentAnimation(Player.ANIM_STAND);
+	}
+	
 }

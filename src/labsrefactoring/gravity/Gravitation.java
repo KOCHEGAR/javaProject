@@ -22,12 +22,8 @@ public class Gravitation {
 		
 			actor.setVelocity(speed.scl(dt));
 			actor.setPosition(position.add(0, speed.y));
-		
 			
 			actor.setVelocity(speed.scl(1 / dt));
-			if (position.y < 0) {position.y = 0;}
 	}
-
-
 }
 

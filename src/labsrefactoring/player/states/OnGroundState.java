@@ -12,19 +12,25 @@ public class OnGroundState implements IState {
 	@Override
 	public void update(Entity actor, float delta) {
 		
-		/*ActorKeys keys = actor.getKeys();
 		
-		if (keys.getKey(Player.JUMP)) {
+		
+		if (PlayerInput.checkJump()) {
 			
-			actor.setVelocity(0, 300);
-			actor.setCurrentState(Entity.IN_AIR_STATE);
+			//actor.setVelY(300);
+			//actor.setCurrentState(Entity.IN_AIR_STATE);
+			//actor.setCurrentAnimation(Entity.ANIM_STAND);
+			PlayerInput.jump(300f);
+			
 			System.out.println("inAirState");
-		}	*/
+		//	return;
+		}	
+		
 		
 		if (PlayerInput.ifNoDirection()) {
 			
-			PlayerInput.moveLeft(-10f);
-			PlayerInput.moveRight(110f);
+			PlayerInput.moveLeft(-100f);
+			PlayerInput.moveRight(100f);
+			System.out.println("here!!!");
 		}
 	}
 }

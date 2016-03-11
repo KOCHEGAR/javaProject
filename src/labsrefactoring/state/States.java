@@ -8,6 +8,7 @@ public abstract class States {
 
 	
 	protected HashMap<Integer, IState> states;
+	protected int currentStateIndex;
 	
 	public States() {
 
@@ -19,8 +20,14 @@ public abstract class States {
 	public IState get(int state){
 		
 		if (states.containsKey(state)){
+			currentStateIndex = state;
 			return states.get(state);
 		}
 		else { return null; }
+	}
+	
+	public int getCurrentStateIndex() {
+		
+		return currentStateIndex;
 	}
 }

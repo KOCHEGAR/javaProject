@@ -16,6 +16,7 @@ public class WalkAnimation implements IAnimation {
 	public WalkAnimation() {
 
 		walk = new MyAnimation(Constants.testAnim, 9, 1, 1f, 64, 0, 64, 129);
+		
 		System.out.println("walk init");
 	}
 	

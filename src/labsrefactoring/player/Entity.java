@@ -114,6 +114,7 @@ public abstract class Entity {
 	public abstract void flip(boolean flipX, boolean flipY);
 	public abstract void setCurrentDirection(Integer Dir);
 	public abstract IAnimation getCurrentAnimation();
+	public abstract int getCurrentState();
 	public abstract void setCurrentState(int state);
 	public abstract void setCurrentAnimation(int anim);
 	
