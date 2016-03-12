@@ -33,8 +33,12 @@ public class StandAnimation implements IAnimation{
 		standFrames.add(new Sprite(region, 732, 0, 76, 119));
 		standFrames.add(new Sprite(region, 855, 1, 76, 118));
 		
+<<<<<<< HEAD
 		stand = new MyAnimation(standFrames, 1f); 
 		;
+=======
+		stand = new MyAnimation(standFrames, 1f);
+>>>>>>> df9f4b1c0d3e2b8eef4742f785aa80aead7b0808
 		System.out.println("stand init");
 	}
 	
