@@ -46,6 +46,9 @@ public class Player extends Entity{
 	@Override
 	public void update(float delta) {
 		
+		if (velocity.x > 0) { flip(false, false); }
+		else if (velocity.x < 0) { flip(true, false); }
+		
 		if (currentAnimation != null) { currentAnimation.update(delta); }
 		if (currentState != null) { currentState.update(this, delta); }
 	}

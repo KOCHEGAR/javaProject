@@ -13,8 +13,8 @@ public class InAirState implements IState{
 	public void update(Entity actor, float delta){
 		
 		grav.applyGravity(actor, delta);
-		PlayerInput.moveLeft(-100);
-		PlayerInput.moveRight(100);
+		PlayerInput.moveLeft(-130);
+		PlayerInput.moveRight(130);
 		//System.out.println(actor.getPosition().y);
 		if (actor.getPosition().y - actor.getRect().height/2 <= 0){// 
 			

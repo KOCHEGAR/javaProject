@@ -22,14 +22,14 @@ public class OnGroundState implements IState {
 			PlayerInput.jump(300f);
 			
 			System.out.println("inAirState");
-		//	return;
+			return;
 		}	
 		
 		
 		if (PlayerInput.ifNoDirection()) {
 			
-			PlayerInput.moveLeft(-100f);
-			PlayerInput.moveRight(100f);
+			PlayerInput.moveLeft(-130f);
+			PlayerInput.moveRight(130f);
 			System.out.println("here!!!");
 		}
 	}

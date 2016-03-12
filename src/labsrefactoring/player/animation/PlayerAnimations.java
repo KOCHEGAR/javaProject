@@ -18,5 +18,6 @@ public class PlayerAnimations extends Animations{
 		
 		animations.put(Entity.ANIM_STAND, new StandAnimation());
 		animations.put(Entity.ANIM_WALK, new WalkAnimation());
+		animations.put(Entity.ANIM_JUMP, new JumpAnimation());
 	}
 }
