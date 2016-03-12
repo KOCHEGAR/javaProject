@@ -40,29 +40,33 @@ public class StandAnimation implements IAnimation{
 	
 	@Override
 	public void flip(boolean flipX, boolean flipY) {
-
 		stand.flip(flipX, flipY);
 	}
 	
 	@Override
 	public void setSize(float width, float height) {
-
 		stand.setSize(width, height);
 	}
 	
 	@Override 
 	public void update(float delta) {
-
 		stand.update(delta);
 	}
 	
 	@Override
 	public void draw(Vector2 actorPos, SpriteBatch batch) {
-		
 		stand.draw(actorPos, batch);
 	}
-
-
+	
+	@Override
+	public void setPlayMode(int mode){
+		stand.setPlayMode(mode);
+	}
+	
+	@Override
+	public void resetAnimation(){
+		stand.resetAnimation();
+	}
 	/*@Override
 	public Sprite getFrame() {
 		// TODO Auto-generated method stub

@@ -12,6 +12,9 @@ import com.badlogic.gdx.math.Vector2;
 
 public class MyAnimation implements IAnimation{
 
+	public static final int RUN_REPEAT=1;
+	public static final int STOP_ON_LAST=2;
+	private int currentMode; 
 	
 	private ArrayList<Sprite> frames;
 	private float maxFrameTime; // длительность отображения одного кадра
@@ -59,6 +62,7 @@ public class MyAnimation implements IAnimation{
 		frame = 0;
 	}
 	
+	
 	@Override
 	public void update(float dt) {
 		
@@ -69,9 +73,7 @@ public class MyAnimation implements IAnimation{
 			currentFrameTime = 0;
 		}
 		
-		if (frame >= frameCountX*frameCountY) { // если фрейм больше или равен количеству всех фреймов, то обнуляем фрейм
-			frame = 0;
-		}
+		runPlayMode(currentMode);
 	}
 	
 	@Override
@@ -82,10 +84,47 @@ public class MyAnimation implements IAnimation{
 		}
 	}
 	
-	/*public Sprite getFrame(){
+	/*public int getFrame(){
 		
-		return frames.get(frame);
+		return frame;
 	}*/
+	
+	private void runPlayMode(int mode) {
+		
+		switch (mode) {
+		
+			case RUN_REPEAT: runRepeatMode(); break;
+			
+			case STOP_ON_LAST: stopOnLastFrameMode(); break;
+
+			default: runRepeatMode(); break;
+		}
+	}
+	
+	private void runRepeatMode() {
+		
+		if (frame >= frameCountX*frameCountY) { // если фрейм больше или равен количеству всех фреймов, то обнуляем фрейм
+			frame = 0;
+		}
+	}
+	
+	private void stopOnLastFrameMode() {
+		
+		if (frame >= frameCountX*frameCountY) {
+			
+			frame = frameCountX*frameCountY-1;
+		}
+	}
+	
+	@Override
+	public void setPlayMode(int mode){
+		currentMode = mode;
+	}
+	
+	@Override
+	public void resetAnimation() {
+		frame = 0;
+	}
 	
 	@Override
 	public void draw(Vector2 actorPos, SpriteBatch batch) {

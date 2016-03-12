@@ -12,6 +12,9 @@ import labsrefactoring.player.states.PlayerStates;
 
 public class Player extends Entity{
 
+	public static final float MAX_SPEED = 150;
+	public static final float MAX_JUMP_HEIGHT = 300;
+	
 	public static final int LEFT = 0;
 	public static final int RIGHT = 1;
 	public static final int JUMP = 2;
@@ -75,12 +78,15 @@ public class Player extends Entity{
 	public void setCurrentState(int state) {
 
 		currentState = states.get(state);
+		System.out.println("33333");
 	}
 
 
 	@Override
 	public void setCurrentAnimation(int anim) {
 
+	//	if (currentAnimation != null) {System.out.println("kokoko");	currentAnimation.resetAnimation(); }
+		//System.out.println("ko2222");
 		currentAnimation = animations.get(anim);
 	}
 

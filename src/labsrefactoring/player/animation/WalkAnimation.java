@@ -61,6 +61,18 @@ public class WalkAnimation implements IAnimation {
 
 		walk.draw(actorPos, batch);
 	}
+
+	@Override
+	public void setPlayMode(int mode) {
+
+		walk.setPlayMode(mode);
+	}
+
+	@Override
+	public void resetAnimation() {
+
+		walk.resetAnimation();
+	}
 	
 	/*@Override
 	public Sprite getFrame() {

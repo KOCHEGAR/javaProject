@@ -31,31 +31,38 @@ public class JumpAnimation implements IAnimation{
 		jumpFrames.add(new Sprite(region, 732, 387, 89, 92));
 		
 		jump = new MyAnimation(jumpFrames, 1f);
+		jump.setPlayMode(MyAnimation.STOP_ON_LAST);
 		System.out.println("jump init");
 	}
 
 	@Override
 	public void setSize(float width, float height) {
-
 		jump.setSize(width, height);
 	}
 
 	@Override
 	public void flip(boolean flipX, boolean flipY) {
-
 		jump.flip(flipX, flipY);
 	}
 
 	@Override
-	public void update(float delta) {
-
+	public void update(float delta) {		
 		jump.update(delta);
 	}
 
 	@Override
 	public void draw(Vector2 actorPos, SpriteBatch batch) {
-
 		jump.draw(actorPos, batch);
+	}
+
+	@Override
+	public void setPlayMode(int mode) {
+		jump.setPlayMode(mode);
+	}
+
+	@Override
+	public void resetAnimation() {
+		jump.resetAnimation();
 	}
 
 }

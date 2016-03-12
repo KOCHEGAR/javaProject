@@ -1,6 +1,5 @@
 package labsrefactoring.player.states;
 
-import labsrefactoring.component.ActorKeys;
 import labsrefactoring.component.PlayerInput;
 import labsrefactoring.player.Entity;
 import labsrefactoring.player.Player;
@@ -19,7 +18,7 @@ public class OnGroundState implements IState {
 			//actor.setVelY(300);
 			//actor.setCurrentState(Entity.IN_AIR_STATE);
 			//actor.setCurrentAnimation(Entity.ANIM_STAND);
-			PlayerInput.jump(300f);
+			PlayerInput.jump(Player.MAX_JUMP_HEIGHT);
 			
 			System.out.println("inAirState");
 			return;
@@ -28,9 +27,8 @@ public class OnGroundState implements IState {
 		
 		if (PlayerInput.ifNoDirection()) {
 			
-			PlayerInput.moveLeft(-130f);
-			PlayerInput.moveRight(130f);
-			System.out.println("here!!!");
+			PlayerInput.moveLeft(-Player.MAX_SPEED);
+			PlayerInput.moveRight(Player.MAX_SPEED);
 		}
 	}
 }

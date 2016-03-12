@@ -81,7 +81,6 @@ public class PlayerInput {
 			actor.setPosX(posX + velX);
 			
 			if (!inAir()) { actor.setCurrentAnimation(Player.ANIM_WALK); }
-			//actor.flip(true, false);
 		}
 	}
 	
@@ -99,7 +98,6 @@ public class PlayerInput {
 			actor.setPosX(posX + velX);
 			
 			if (!inAir()) {	actor.setCurrentAnimation(Player.ANIM_WALK); }
-			//actor.flip(false, false);
 		}
 	}
 	
@@ -108,6 +106,5 @@ public class PlayerInput {
 		actor.setVelY(velocityY);
 		actor.setCurrentState(Player.IN_AIR_STATE);
 		actor.setCurrentAnimation(Player.ANIM_JUMP);
-		//actor.flip(true, true);
 	}
 }
