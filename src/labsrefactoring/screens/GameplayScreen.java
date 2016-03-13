@@ -22,7 +22,7 @@ public class GameplayScreen extends AbstractScreen{
 		super();
 		
 		player = new Player(10, 100);
-		player.setSize(50, 105);
+		player.setSize(70, 115);
 		
 		
 		///test bg
