@@ -1,8 +1,8 @@
 package labsrefactoring.player.states;
 
-import labsrefactoring.component.PlayerInput;
 import labsrefactoring.player.Entity;
 import labsrefactoring.player.Player;
+import labsrefactoring.player.playerInput.PlayerInput;
 import labsrefactoring.state.IState;
 
 public class OnGroundState implements IState {
@@ -16,7 +16,7 @@ public class OnGroundState implements IState {
 		if (PlayerInput.checkJump()) {
 			
 			PlayerInput.jump(Player.MAX_JUMP_HEIGHT);
-			
+
 			System.out.println("inAirState");
 			return;
 		}	

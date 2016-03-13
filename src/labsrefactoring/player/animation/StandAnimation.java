@@ -34,6 +34,7 @@ public class StandAnimation implements IAnimation{
 		standFrames.add(new Sprite(region, 855, 1, 76, 118));
 		
 		stand = new MyAnimation(standFrames, 1f); 
+		stand.setPlayMode(MyAnimation.RUN_REPEAT);
 		
 		System.out.println("stand init");
 	}

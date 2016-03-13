@@ -1,9 +1,9 @@
 package labsrefactoring.player.states;
 
-import labsrefactoring.component.PlayerInput;
 import labsrefactoring.gravity.Gravitation;
 import labsrefactoring.player.Entity;
 import labsrefactoring.player.Player;
+import labsrefactoring.player.playerInput.PlayerInput;
 import labsrefactoring.state.IState;
 
 public class InAirState implements IState{

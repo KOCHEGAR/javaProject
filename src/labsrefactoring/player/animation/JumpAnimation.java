@@ -32,6 +32,7 @@ public class JumpAnimation implements IAnimation{
 		
 		jump = new MyAnimation(jumpFrames, 1f);
 		jump.setPlayMode(MyAnimation.STOP_ON_LAST);
+		
 		System.out.println("jump init");
 	}
 
