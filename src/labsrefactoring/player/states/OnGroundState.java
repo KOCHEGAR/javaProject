@@ -15,9 +15,6 @@ public class OnGroundState implements IState {
 		
 		if (PlayerInput.checkJump()) {
 			
-			//actor.setVelY(300);
-			//actor.setCurrentState(Entity.IN_AIR_STATE);
-			//actor.setCurrentAnimation(Entity.ANIM_STAND);
 			PlayerInput.jump(Player.MAX_JUMP_HEIGHT);
 			
 			System.out.println("inAirState");

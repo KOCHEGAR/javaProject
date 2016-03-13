@@ -6,7 +6,8 @@ import labsrefactoring.player.Entity;
 
 public class Gravitation {
 
-	float gravity; //= -9.8f;
+	private float gravity; 
+	public static float GRAVITY = -9.8f;
 	
 	public Gravitation(float gravity) {
 

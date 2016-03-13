@@ -16,7 +16,7 @@ public class InAirState implements IState{
 		grav.applyGravity(actor, delta);
 		PlayerInput.moveLeft(-Player.MAX_SPEED);
 		PlayerInput.moveRight(Player.MAX_SPEED);
-		//System.out.println(actor.getPosition().y);
+
 		if (actor.getPosition().y - actor.getRect().height/2 <= 0){// 
 			
 			actor.setVelY(0);
