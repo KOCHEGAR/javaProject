@@ -34,6 +34,7 @@ public class WalkAnimation implements IAnimation {
 		walkFrames.add(new Sprite(region, 5, 247, 97, 111));
 		
 		walk = new MyAnimation(walkFrames, 1f);
+		walk.setPlayMode(MyAnimation.RUN_REPEAT);
 		
 		System.out.println("walk init");
 	}

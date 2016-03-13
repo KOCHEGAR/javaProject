@@ -5,8 +5,8 @@ package labsrefactoring.player;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import labsrefactoring.animation.IAnimation;
-import labsrefactoring.component.PlayerInput;
 import labsrefactoring.player.animation.PlayerAnimations;
+import labsrefactoring.player.playerInput.PlayerInput;
 import labsrefactoring.player.states.PlayerStates;
 
 

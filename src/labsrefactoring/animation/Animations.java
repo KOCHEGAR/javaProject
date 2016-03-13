@@ -9,7 +9,6 @@ public abstract class Animations {
 	protected HashMap<Integer, IAnimation> animations;
 
 	public Animations() {
-
 		animations = new HashMap<Integer, IAnimation>();
 	}
 	
@@ -17,15 +16,10 @@ public abstract class Animations {
 	
 	public IAnimation get(int anim){
 		
-		if (animations.containsKey(anim)) {
-			return animations.get(anim);
-		}
-		else {
-			return null;
-		}
+		if (animations.containsKey(anim)) {	return animations.get(anim); }
+		else { return null; }
 	}
 	public Collection<IAnimation> getAll(){
-		
 		return animations.values();
 	}
 }

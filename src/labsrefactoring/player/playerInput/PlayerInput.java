@@ -1,9 +1,10 @@
-package labsrefactoring.component;
+package labsrefactoring.player.playerInput;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.math.Vector2;
 
+import labsrefactoring.component.ActorKeys;
 import labsrefactoring.player.Entity;
 import labsrefactoring.player.Player;
 

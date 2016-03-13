@@ -40,7 +40,6 @@ public abstract class Entity {
 		keys = new ActorKeys();
 		currentAnimation = null;
 		currentGround = null;
-		
 	}
 	
 	//
@@ -57,11 +56,13 @@ public abstract class Entity {
 		rectangle.setCenter(x, y);	
 	}
 	public void setPosition(Vector2 pos){
+		
 		position = pos;
 		rectangle.setCenter(pos);
 	}
 	
 	public void setVelocity(float x, float y) {
+		
 		velocity.x = x;
 		velocity.y = y;
 	}
@@ -77,6 +78,7 @@ public abstract class Entity {
 	}
 	
 	public void setPosY(float y) {
+		
 		position.y = y;
 		rectangle.setCenter(rectangle.x-rectangle.width/2 , y);
 	}
