@@ -33,7 +33,7 @@ public class Player extends Entity{
 		animations = new PlayerAnimations();
 		states = new PlayerStates();
 		setCurrentState(IN_AIR_STATE);
-		setCurrentAnimation(ANIM_STAND);
+		setCurrentAnimation(ANIM_JUMP);
 		PlayerInput.setActorForControl(this);
 	} 
 
@@ -76,9 +76,7 @@ public class Player extends Entity{
 
 	@Override
 	public void setCurrentState(int state) {
-
 		currentState = states.get(state);
-		System.out.println("33333");
 	}
 
 
@@ -92,7 +90,6 @@ public class Player extends Entity{
 
 	@Override
 	public IAnimation getCurrentAnimation() {
-
 		return currentAnimation;
 	}
 
@@ -123,7 +120,6 @@ public class Player extends Entity{
 
 	@Override
 	public int getCurrentState() {
-		
 		return states.getCurrentStateIndex();
 	}
 }

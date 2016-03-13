@@ -10,6 +10,7 @@ import com.badlogic.gdx.math.Vector2;
 
 import labsrefactoring.animation.IAnimation;
 import labsrefactoring.animation.MyAnimation;
+import labsrefactoring.player.Entity;
 import labsrefactoring.tools.Constants;
 
 public class WalkAnimation implements IAnimation {
@@ -58,7 +59,7 @@ public class WalkAnimation implements IAnimation {
 	}
 
 	@Override
-	public void draw(Vector2 actorPos, SpriteBatch batch) {
+	public void draw(Entity actorPos, SpriteBatch batch) {
 
 		walk.draw(actorPos, batch);
 	}

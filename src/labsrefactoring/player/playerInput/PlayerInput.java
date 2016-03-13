@@ -17,7 +17,6 @@ public class PlayerInput {
 	private static boolean a, d, space;
 	
 	public static boolean hasActor() {
-		
 		return actor != null;
 	}
 	
@@ -47,25 +46,28 @@ public class PlayerInput {
 		
 		keys.setKey(Player.JUMP, Gdx.input.isKeyPressed(Input.Keys.SPACE));
 		space = keys.getKey(Player.JUMP);
+	
 	}
+	
+	
 	
 	public static boolean ifNoDirection() {
 		
 		if (a == d) {
-			actor.setCurrentAnimation(Player.ANIM_STAND);
+			
 			actor.setVelX(0);
+			actor.setCurrentAnimation(Player.ANIM_STAND);
+			
 			return false;
 		}
 		return true;
 	}
 	
 	public static boolean checkJump() {
-		
 		return space;
 	}
 
 	private static boolean inAir() {
-		
 		return actor.getCurrentState() == Player.IN_AIR_STATE;
 	}
 
@@ -78,7 +80,7 @@ public class PlayerInput {
 			//actor.addVelocityX(velX);
 			
 			float posX = actor.getPosition().x;
-			 velX = actor.getVelocity().x;
+			velX = actor.getVelocity().x;
 			actor.setPosX(posX + velX);
 			
 			if (!inAir()) { actor.setCurrentAnimation(Player.ANIM_WALK); }

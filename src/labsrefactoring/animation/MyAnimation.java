@@ -8,6 +8,8 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
 
+import labsrefactoring.player.Entity;
+
 
 
 public class MyAnimation implements IAnimation{
@@ -127,14 +129,16 @@ public class MyAnimation implements IAnimation{
 	}
 	
 	@Override
-	public void draw(Vector2 actorPos, SpriteBatch batch) {
+	public void draw(Entity actorPos, SpriteBatch batch) {
 		
 		Sprite region = null;
 		region = frames.get(frame);
 		
-		float x = actorPos.x;
-		float y = actorPos.y;
+		float x = actorPos.getPosition().x;
+		float y = actorPos.getPosition().y;
 
+		region.flip(x, y);
+		
 		region.setCenter(x, y);
 		region.draw(batch);
 	}
