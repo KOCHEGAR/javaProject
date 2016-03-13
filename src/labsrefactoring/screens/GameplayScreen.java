@@ -8,7 +8,6 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 
 import labsrefactoring.World.TestMap;
-import labsrefactoring.component.PlayerInput;
 import labsrefactoring.player.Player;
 import labsrefactoring.tools.Constants;
 
