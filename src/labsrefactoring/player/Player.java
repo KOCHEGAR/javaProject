@@ -49,7 +49,7 @@ public class Player extends Entity{
 		if (velocity.x > 0) { directionRight = true;      flip(directionRight, false); }
 		else if (velocity.x < 0) { directionRight = false; flip(directionRight, false);}
 		
-		//if (currentGround != null) { currentGround.updateCurrentGround(this, currentGround); }
+		if (currentGround != null) { currentGround.updateCurrentGround(this, currentGround); }
 		if (currentAnimation != null) { currentAnimation.update(delta); }
 		if (currentState != null) { currentState.update(this, delta); }
 	}

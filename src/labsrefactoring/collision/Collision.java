@@ -35,6 +35,7 @@ public class Collision {
 					actor.setVelY(0);
 					actor.getCurrentAnimation().resetAnimation(); //сбрасываем анимацию прыжка, так как она останавливается на последнем кадре
 					actor.setCurrentState(Entity.ON_GROUND_STATE);
+					actor.setCurrentGround(element);
 					System.out.println("onGroundState");
 					return;
 				}
