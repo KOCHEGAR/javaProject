@@ -1,5 +1,6 @@
 ## my settings for gitignore
 
+## only for Eclipse IDE
 /build/
 
 /bin/
