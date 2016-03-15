@@ -16,7 +16,7 @@ public class GameplayScreen extends AbstractScreen{
 
 	private TestMap map;
 	private Player player;
-	
+	private Collision collision;
 	private Sprite bg;
 	
 	public GameplayScreen() {
@@ -32,7 +32,10 @@ public class GameplayScreen extends AbstractScreen{
 		bg.setSize(400, 240);
 		//
 		map = new TestMap();
+		collision = new Collision();
 		map.loadMap();
+		collision.setMapToUpdateCollision(map);
+		
 		viewport = new FitViewport(Constants.V_WIDTH, Constants.V_HEIGHT, camera);
 	}
 	
@@ -78,7 +81,7 @@ public class GameplayScreen extends AbstractScreen{
 		
 		// фиксация  камеры
 		player.update(dt);
-		Collision.col(player, map);//LJLTKFNM
+		//Collision.col(player);
 		//if (player.getPosition().y <= 0) {player.setPosition(player.getPosition().x, 0);}
 		if (camera.position.x <= 200) camera.position.x = 200;
 		if (camera.position.y <= 120) camera.position.y = 120;

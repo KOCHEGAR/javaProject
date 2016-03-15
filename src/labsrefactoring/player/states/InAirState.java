@@ -1,5 +1,6 @@
 package labsrefactoring.player.states;
 
+import labsrefactoring.collision.Collision;
 import labsrefactoring.gravity.Gravitation;
 import labsrefactoring.player.Entity;
 import labsrefactoring.player.Player;
@@ -17,6 +18,8 @@ public class InAirState implements IState{
 		PlayerInput.moveLeft(-Player.MAX_SPEED);
 		PlayerInput.moveRight(Player.MAX_SPEED);
 
+		
+		Collision.col(actor);
 		// то что ниже - для теста(не из которого пекут пирожки)
 		/*if (actor.getPosition().y - actor.getRect().height/2 <= 0){// 
 			

@@ -76,13 +76,13 @@ public abstract class Entity {
 	public void setPosX(float x) {
 		
 		position.x = x;
-		rectangle.setCenter(x, rectangle.y-rectangle.height/2);
+		rectangle.setCenter(x, rectangle.y+rectangle.height/2);
 	}
 	
 	public void setPosY(float y) {
 		
 		position.y = y;
-		rectangle.setCenter(rectangle.x-rectangle.width/2 , y);
+		rectangle.setCenter(rectangle.x+rectangle.width/2 , y);
 	}
 	
 	public void setVelX(float x) {
@@ -122,7 +122,6 @@ public abstract class Entity {
 	public abstract int getCurrentState();
 	public abstract void setCurrentState(int state);
 	public abstract void setCurrentAnimation(int anim);
-	
 	
 	public abstract void handleInput(float delta);
 	public abstract void update(float delta);

@@ -4,28 +4,37 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.Rectangle;
 
 import labsrefactoring.World.TestMap;
+import labsrefactoring.mapElement.GroundElement;
 import labsrefactoring.player.Entity;
 
 public class Collision {
 
-	public static void col(Entity entity, TestMap map) {
+	static TestMap map;
+	
+	
+	public void setMapToUpdateCollision(TestMap testMap) {
+		map = testMap;
+	}
+	
+	public static void col(Entity actor) {
 	
 		
 		
-		for (Rectangle rectangle : map.getGround()) {
+		for (GroundElement element : map.getGround()) {
 			
-			if (entity.getRect().overlaps(rectangle)) {
+			if (actor.getRect().overlaps(element.getGround())) {
 				System.out.println("overlapsed");
 				
-				float previousFrameY = entity.getPosition().y + entity.getVelocity().y * Gdx.graphics.getDeltaTime();
-				float previousFrameBottom = previousFrameY - entity.getRect().height;
-				float platformTop = rectangle.y;
+				float previousFrameY = actor.getPosition().y + actor.getVelocity().y * Gdx.graphics.getDeltaTime();
+				float previousFrameBottom = previousFrameY - actor.getRect().height/2;
+				float platformTop = element.getTop();
 			
 				if (previousFrameBottom <= platformTop) {
 					
-					entity.setVelY(0);
-					entity.getCurrentAnimation().resetAnimation(); //сбрасываем анимацию прыжка, так как она останавливается на последнем кадре
-					entity.setCurrentState(Entity.ON_GROUND_STATE);
+					actor.setPosY(platformTop+actor.getRect().height/2);
+					actor.setVelY(0);
+					actor.getCurrentAnimation().resetAnimation(); //сбрасываем анимацию прыжка, так как она останавливается на последнем кадре
+					actor.setCurrentState(Entity.ON_GROUND_STATE);
 					System.out.println("onGroundState");
 					return;
 				}

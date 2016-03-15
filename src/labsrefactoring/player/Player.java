@@ -37,21 +37,19 @@ public class Player extends Entity{
 		PlayerInput.setActorForControl(this);
 	} 
 
-	
-	
 	@Override
 	public void handleInput(float delta) {
 
 		PlayerInput.handleInput(delta);
 	}
 
-	
 	@Override
 	public void update(float delta) {
 		
 		if (velocity.x > 0) { directionRight = true;      flip(directionRight, false); }
 		else if (velocity.x < 0) { directionRight = false; flip(directionRight, false);}
 		
+		//if (currentGround != null) { currentGround.updateCurrentGround(this, currentGround); }
 		if (currentAnimation != null) { currentAnimation.update(delta); }
 		if (currentState != null) { currentState.update(this, delta); }
 	}
@@ -64,21 +62,16 @@ public class Player extends Entity{
 		if (currentAnimation != null) { currentAnimation.draw(position, batch); }
 	}
 
-
-
 	@Override
 	public void setCurrentDirection(Integer Dir) {
 
 		
 	}
 
-
-
 	@Override
 	public void setCurrentState(int state) {
 		currentState = states.get(state);
 	}
-
 
 	@Override
 	public void setCurrentAnimation(int anim) {
@@ -89,7 +82,6 @@ public class Player extends Entity{
 	public IAnimation getCurrentAnimation() {
 		return currentAnimation;
 	}
-
 
 	@Override 
 	public void setSize(float width, float height) {
@@ -103,7 +95,6 @@ public class Player extends Entity{
 		System.out.println(rectangle.getWidth() + " rw - rh " + rectangle.getHeight());
 	}
 
-
 	@Override
 	public void flip(boolean flipX, boolean flipY) {
 
@@ -113,14 +104,10 @@ public class Player extends Entity{
 		}
 	}
 
-
-
 	@Override
 	public int getCurrentState() {
 		return states.getCurrentStateIndex();
 	}
-
-
 
 	@Override
 	public boolean getDirectionRight() {

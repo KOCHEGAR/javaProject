@@ -12,23 +12,23 @@ import labsrefactoring.tools.Constants;
 public class TestMap {
 
 	private ArrayList<MapElement> mapElements;
-	private ArrayList<Rectangle> ground;
+	private ArrayList<GroundElement> ground;
 	
 	public TestMap() {
 
 		mapElements = new ArrayList<MapElement>();
-		ground = new ArrayList<Rectangle>();
+		ground = new ArrayList<GroundElement>();
 	}
 	
 	public void loadMap(){
 		
 		// тут создавать элемены карты и коллизии к ним
 		mapElements.add(new MapElement(32, 0, Constants.testSprite, 8, 1));
-		ground.add(new Rectangle(32, 0, 256, 32));
+		ground.add(new GroundElement(32, 0, 256, 32));
 	}
 	
 	
-	public ArrayList<Rectangle> getGround() {
+	public ArrayList<GroundElement> getGround() {
 		return ground;
 	}
 	
