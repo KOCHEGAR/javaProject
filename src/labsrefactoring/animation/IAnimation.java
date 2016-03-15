@@ -13,5 +13,5 @@ public interface IAnimation {
 	public abstract void setSize(float width, float height);
 	public abstract void flip(boolean flipX, boolean flipY);
 	public abstract void update(float delta);
-	public abstract void draw(Entity actor, SpriteBatch batch);
+	public abstract void draw(Vector2 actorPos, SpriteBatch batch);
 }

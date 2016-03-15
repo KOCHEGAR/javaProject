@@ -7,9 +7,9 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
 
+
 import labsrefactoring.animation.IAnimation;
 import labsrefactoring.animation.MyAnimation;
-import labsrefactoring.player.Entity;
 import labsrefactoring.tools.Constants;
 
 public class JumpAnimation implements IAnimation{
@@ -53,7 +53,7 @@ public class JumpAnimation implements IAnimation{
 	}
 
 	@Override
-	public void draw(Entity actorPos, SpriteBatch batch) {
+	public void draw(Vector2 actorPos, SpriteBatch batch) {
 		jump.draw(actorPos, batch);
 	}
 

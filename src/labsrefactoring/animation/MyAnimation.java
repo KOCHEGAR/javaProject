@@ -24,6 +24,8 @@ public class MyAnimation implements IAnimation{
 	private int frameCountX; // количество кадров анимации
 	private int frameCountY;
 	private int frame; // отдельный кадр
+	private boolean directionRight;
+	private boolean flipY;
 	
 	public MyAnimation() { }
 	
@@ -105,16 +107,16 @@ public class MyAnimation implements IAnimation{
 	
 	private void runRepeatMode() {
 		
-		if (frame >= frameCountX*frameCountY) { // если фрейм больше или равен количеству всех фреймов, то обнуляем фрейм
+		if (frame >= frames.size()) { // если фрейм больше или равен количеству всех фреймов, то обнуляем фрейм
 			frame = 0;
 		}
 	}
 	
 	private void stopOnLastFrameMode() {
 		
-		if (frame >= frameCountX*frameCountY) {
+		if (frame >= frames.size()-1) {
 			
-			frame = frameCountX*frameCountY-1;
+			frame = frames.size()-1;
 		}
 	}
 	
@@ -129,16 +131,17 @@ public class MyAnimation implements IAnimation{
 	}
 	
 	@Override
-	public void draw(Entity actorPos, SpriteBatch batch) {
+	public void draw(Vector2 actorPos, SpriteBatch batch) {
 		
 		Sprite region = null;
 		region = frames.get(frame);
 		
-		float x = actorPos.getPosition().x;
-		float y = actorPos.getPosition().y;
+		float x = actorPos.x;
+		float y = actorPos.y;
+		float scaleX = directionRight ? 1 : -1;
+		float scaleY = flipY ? -1 : 1;
 
-		region.flip(x, y);
-		
+		region.setScale(scaleX, scaleY);
 		region.setCenter(x, y);
 		region.draw(batch);
 	}
@@ -146,16 +149,17 @@ public class MyAnimation implements IAnimation{
 	@Override
 	public void flip(boolean flipX, boolean flipY) {
 
-		for (Sprite sprite : frames) {
+		directionRight = flipX;
+		this.flipY =  flipY;
+		
+		/*for (Sprite sprite : frames) {
 			if (flipX && !sprite.isFlipX()) {
 				sprite.flip(flipX, flipY);
-				//System.out.println("flipx1 -> " +flipX);
 			}
 			else if (!flipX && sprite.isFlipX()) {
-				//System.out.println("flipx2 -> " +flipX);
 				sprite.flip(!flipX, flipY);
 			}
-		}
+		}*/
 	}
 
 	

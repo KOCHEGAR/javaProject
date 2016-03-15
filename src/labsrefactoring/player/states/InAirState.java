@@ -17,13 +17,14 @@ public class InAirState implements IState{
 		PlayerInput.moveLeft(-Player.MAX_SPEED);
 		PlayerInput.moveRight(Player.MAX_SPEED);
 
-		if (actor.getPosition().y - actor.getRect().height/2 <= 0){// 
+		// то что ниже - для теста(не из которого пекут пирожки)
+		/*if (actor.getPosition().y - actor.getRect().height/2 <= 0){// 
 			
 			actor.setVelY(0);
 			actor.getCurrentAnimation().resetAnimation(); //сбрасываем анимацию прыжка, так как она останавливается на последнем кадре
 			actor.setCurrentState(Entity.ON_GROUND_STATE);
 			System.out.println("onGroundState");
 			return;
-		}
+		}*/
 	}
 }

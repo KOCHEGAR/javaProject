@@ -8,6 +8,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 
 import labsrefactoring.World.TestMap;
+import labsrefactoring.collision.Collision;
 import labsrefactoring.player.Player;
 import labsrefactoring.tools.Constants;
 
@@ -21,7 +22,7 @@ public class GameplayScreen extends AbstractScreen{
 	public GameplayScreen() {
 		super();
 		
-		player = new Player(60, 60);
+		player = new Player(60, 160);
 		player.setSize(70, 115);
 		
 		
@@ -77,7 +78,7 @@ public class GameplayScreen extends AbstractScreen{
 		
 		// фиксация  камеры
 		player.update(dt);
-		
+		Collision.col(player, map);//LJLTKFNM
 		//if (player.getPosition().y <= 0) {player.setPosition(player.getPosition().x, 0);}
 		if (camera.position.x <= 200) camera.position.x = 200;
 		if (camera.position.y <= 120) camera.position.y = 120;

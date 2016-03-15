@@ -59,7 +59,7 @@ public class WalkAnimation implements IAnimation {
 	}
 
 	@Override
-	public void draw(Entity actorPos, SpriteBatch batch) {
+	public void draw(Vector2 actorPos, SpriteBatch batch) {
 
 		walk.draw(actorPos, batch);
 	}

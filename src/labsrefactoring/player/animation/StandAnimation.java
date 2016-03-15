@@ -56,7 +56,7 @@ public class StandAnimation implements IAnimation{
 	}
 	
 	@Override
-	public void draw(Entity actorPos, SpriteBatch batch) {
+	public void draw(Vector2 actorPos, SpriteBatch batch) {
 		stand.draw(actorPos, batch);
 	}
 	

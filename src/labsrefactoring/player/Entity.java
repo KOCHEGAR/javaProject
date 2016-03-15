@@ -30,6 +30,7 @@ public abstract class Entity {
 	protected IState currentState;
 	protected GroundElement currentGround;
 	protected ActorKeys keys;
+	protected boolean directionRight;
 	
 	
 	public Entity(float x, float y) {
@@ -38,6 +39,7 @@ public abstract class Entity {
 		rectangle = new Rectangle(x, y, 0, 0);
 		position = new Vector2(x, y);
 		keys = new ActorKeys();
+		directionRight = true;
 		currentAnimation = null;
 		currentGround = null;
 	}
@@ -115,6 +117,7 @@ public abstract class Entity {
 	public abstract void setSize(float width, float height);
 	public abstract void flip(boolean flipX, boolean flipY);
 	public abstract void setCurrentDirection(Integer Dir);
+	public abstract boolean getDirectionRight();
 	public abstract IAnimation getCurrentAnimation();
 	public abstract int getCurrentState();
 	public abstract void setCurrentState(int state);

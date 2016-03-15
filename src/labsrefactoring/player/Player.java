@@ -49,8 +49,8 @@ public class Player extends Entity{
 	@Override
 	public void update(float delta) {
 		
-		if (velocity.x > 0) { flip(false, false); }
-		else if (velocity.x < 0) { flip(true, false); }
+		if (velocity.x > 0) { directionRight = true;      flip(directionRight, false); }
+		else if (velocity.x < 0) { directionRight = false; flip(directionRight, false);}
 		
 		if (currentAnimation != null) { currentAnimation.update(delta); }
 		if (currentState != null) { currentState.update(this, delta); }
@@ -82,9 +82,6 @@ public class Player extends Entity{
 
 	@Override
 	public void setCurrentAnimation(int anim) {
-
-	//	if (currentAnimation != null) {System.out.println("kokoko");	currentAnimation.resetAnimation(); }
-		//System.out.println("ko2222");
 		currentAnimation = animations.get(anim);
 	}
 
@@ -121,5 +118,13 @@ public class Player extends Entity{
 	@Override
 	public int getCurrentState() {
 		return states.getCurrentStateIndex();
+	}
+
+
+
+	@Override
+	public boolean getDirectionRight() {
+
+		return  directionRight;
 	}
 }
